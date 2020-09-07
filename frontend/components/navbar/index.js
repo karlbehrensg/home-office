@@ -1,7 +1,9 @@
+import Link from 'next/link'
+
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">Navbar w/ text</a>
+      <Link href='/'><a className="navbar-brand">Home Office</a></Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -19,7 +21,8 @@ function Navbar() {
           </li>
         </ul>
         <span className="navbar-text">
-          Navbar text with an inline element
+          <Link href='user/register'><a className="btn btn-primary btn-sm" role="button" aria-disabled="true">Registrate</a></Link>
+          <Link href='user/login'><a className="btn btn-outline-success btn-sm" role="button" aria-disabled="true">Iniciar Sesion</a></Link>
         </span>
       </div>
     </nav>
