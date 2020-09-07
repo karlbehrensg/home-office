@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Layout from "../components/layout";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }) {
               integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
               crossOrigin="anonymous" />
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
               integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
               crossOrigin="anonymous"></script>
