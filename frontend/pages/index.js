@@ -4,12 +4,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <h1>Home</h1>
-      <h5>
-        <Link href='user/register'>
-          <a>Pagina de registro</a>
-        </Link>
-      </h5>
+      <div className="jumbotron">
+        <h1 className="display-4">Realiza tareas desde tu hogar</h1>
+        <p className="lead">Con Home Office puedes realizar tareas online y ganar dinero.</p>
+        <hr className="my-4" />
+          <a className="btn btn-primary btn-lg" role="button">Busca una tarea</a>
+          <a className="btn btn-outline-secondary btn-lg" role="button">Crea una tarea</a>
+      </div>
     </>
   )
 }
