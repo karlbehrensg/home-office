@@ -21,6 +21,7 @@ function Navbar() {
           </li>
         </ul>
         <span className="navbar-text">
+          <Link href='profile'><a className="btn btn-outline-success btn-sm mr-2" role="button" aria-disabled="true">Perfil</a></Link>
           <Link href='register'><a className="btn btn-primary btn-sm mr-2" role="button" aria-disabled="true">Registrate</a></Link>
           <Link href='login'><a className="btn btn-outline-success btn-sm mr-2" role="button" aria-disabled="true">Iniciar Sesion</a></Link>
         </span>
