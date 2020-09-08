@@ -11,18 +11,18 @@ function Navbar() {
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+            <Link href='/'><a className="nav-link">Home <span className="sr-only">(current)</span></a></Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Features</a>
+            <a className="nav-link">Features</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Pricing</a>
+            <a className="nav-link">Pricing</a>
           </li>
         </ul>
         <span className="navbar-text">
-          <Link href='user/register'><a className="btn btn-primary btn-sm mr-2" role="button" aria-disabled="true">Registrate</a></Link>
-          <Link href='user/login'><a className="btn btn-outline-success btn-sm mr-2" role="button" aria-disabled="true">Iniciar Sesion</a></Link>
+          <Link href='register'><a className="btn btn-primary btn-sm mr-2" role="button" aria-disabled="true">Registrate</a></Link>
+          <Link href='login'><a className="btn btn-outline-success btn-sm mr-2" role="button" aria-disabled="true">Iniciar Sesion</a></Link>
         </span>
       </div>
     </nav>

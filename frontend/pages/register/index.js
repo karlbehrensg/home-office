@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function Register() {
+export default function Index() {
   return (
     <div className="container col-md-8 align-items-center">
       <div className="card">
