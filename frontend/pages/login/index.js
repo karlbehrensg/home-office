@@ -7,6 +7,18 @@ export default function Index() {
 
   const onSubmit = (data) => {
     console.log(JSON.stringify(data))
+
+    fetch('http://127.0.0.1:8000/auth/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    })
+      .then(data => data.json())
+      .then(
+        data => {
+          console.log(data.token);
+        }
+      ).catch(error => console.error(error))
   }
 
   return (
@@ -18,14 +30,13 @@ export default function Index() {
               <label htmlFor="exampleInputEmail1">Email</label>
               <input
                 ref={register({required: true})}
-                name="email"
-                type="email"
+                name="username"
+                type="text"
                 className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
+                id="username"
               />
               {
-                errors?.email &&
+                errors?.user &&
                 <div className="alert alert-danger" role="alert">
                   Ingrese un correo
                 </div>
@@ -38,7 +49,7 @@ export default function Index() {
                 name="password"
                 type="password"
                 className="form-control"
-                id="exampleInputPassword1"
+                id="password"
               />
               {
                 errors?.password &&
