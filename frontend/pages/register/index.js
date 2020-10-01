@@ -1,11 +1,28 @@
 import Link from 'next/link'
+import {useForm} from "react-hook-form"
 
 export default function Index() {
+
+  const {register, handleSubmit} = useForm()
+
+  const onSubmit = (data) => {
+    console.log(JSON.stringify(data))
+
+    fetch('http://127.0.0.1:8000/api/users/', {
+      method: 'POST',
+      headers: {'Content-type': 'application/json'},
+      body: JSON.stringify(data)
+    })
+      .then(data => data.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error))
+  }
+
   return (
     <div className="container col-md-8 align-items-center">
       <div className="card">
         <div className="card-body">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-row">
               <div className="form-group col-md-4">
                 <label>Nombre</label>
@@ -23,7 +40,7 @@ export default function Index() {
             <div className="form-row">
               <div className="form-group col-md-6">
                 <label htmlFor="inputEmail4">Email</label>
-                <input type="email" className="form-control" />
+                <input name="username" ref={register({required:true})} type="email" className="form-control" />
               </div>
               <div className="form-group col-md-6">
                 <label htmlFor="inputEmail4">Confirmar email</label>
@@ -33,7 +50,7 @@ export default function Index() {
             <div className="form-row">
               <div className="form-group col-md-6">
                 <label htmlFor="inputPassword4">Contraseña</label>
-                <input type="password" className="form-control" />
+                <input name="password" ref={register({required:true})} type="password" className="form-control" />
               </div>
               <div className="form-group col-md-6">
                 <label htmlFor="inputPassword4">Confirmar contraseña</label>
